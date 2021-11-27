@@ -1,0 +1,233 @@
+.sinUpContainer{	
+	padding: 60px 15% 90px 15%;
+}
+
+
+.signUpWrap{
+	
+}
+
+.gridContainer{
+	display: grid;
+	grid-template-columns: 551px 1fr 551px;
+	gap: 1%;
+}
+
+.registerBlock,
+.sinInForm{
+	display: flex;
+	flex-direction: column;
+}
+
+.allInputForm{
+	height: 40px;
+	margin-top: 30px;
+	display: block;
+}
+
+.inputItems{	
+	background-color: rgba(51,51,51,0);
+	border: 1px solid #e7e7e7;
+}
+
+
+/* пока не подключено. Это свойства для input с ошибкой ввода */
+.errorForm{
+	height: 40px;
+	background-color: rgba(58,53,54,0);
+	border: 1px solid #bb5465;
+	
+}
+
+
+
+.btnForm{
+	width: 149px;
+	height: 59px;
+	background-color: rgba(115,115,115,0);
+	border: 2px solid #737373;
+	font-size: 16px;
+	letter-spacing: 3px;
+	color: #454647;
+	font-weight: 400;
+	font-family:'montserratsemibold';
+	white-space: nowrap;
+}
+
+.btnForm2{
+	width: 262px;
+	height: 59px;
+	background-color: rgba(115,115,115,0);
+	border: 2px solid #737373;
+	white-space: nowrap;
+	font-size: 16px;
+	letter-spacing: 3px;
+	color: #454647;
+	font-weight: 400;
+	font-family: 'montserratsemibold';
+}
+
+.btnForm2:hover,
+.btnForm:hover {	
+	background-color: #00c8c8;
+	border: 2px solid #737373;
+	font-size: 16px;
+	letter-spacing: 3px;
+	color: #f8f8f8;
+	font-weight: 400;
+	font-family: 'montserratlight';
+}
+
+
+
+.btnFlex{
+	display: flex;     
+	justify-content: space-between;
+	margin-bottom: 50px;
+}
+
+.spanForm{
+	padding-top: 50px;
+	font-size: 15px;
+	line-height: 22px;
+	color: #00c8c8;
+	font-weight: 400;
+	font-family: "Roboto";
+	text-align: right;
+
+}
+
+.checkBig{
+	width: 24px;
+	height: 24px;
+}
+
+/* стили для текста вписываемого в input (в том числе и для placeholder) */
+input[type="text"] {
+	font-size: 15px;
+	line-height: 22px;
+	color: #989898;
+	font-weight: 300;
+	font-family: 'montserratlight';
+	padding: 5px;
+}
+
+
+.signText{
+	font-size: 18px;
+	line-height: 20px;
+	color: #575153;
+	font-weight: 400;
+	font-family: 'montserratsemibold';
+}
+
+
+.lineVertical{
+	background: url("img/border_vertical.png") center no-repeat;
+}
+
+.lineHorizontal{
+	max-width: 500px;
+	height: 0.5px;
+	background-color: #eeeeee;
+	margin: 0 auto;
+	display: none;
+}
+
+.prostoText{
+	font-size: 15px;
+	line-height: 22px;
+	color: #8e8c8c;
+	font-weight: 400;
+	font-family: "Roboto";
+	text-align: right;
+}
+
+
+
+.registerBlock{
+	
+}
+
+.btnFlexReg{
+	display: flex;  
+	justify-content: space-between;
+}
+
+/* перестройка контента */
+
+@media (max-width: 1600px){
+	.sinUpContainer{	
+		padding: 60px 10% 90px 10%;
+	}
+}
+
+@media (max-width: 1420px){
+	.sinUpContainer{	
+		padding: 60px 3% 90px 3%;
+	}
+}
+
+
+@media (max-width: 1300px){
+	.gridContainer{
+		display: grid;
+		grid-template-columns: 551px;
+		gap: 20px;
+	}
+	.sinUpContainer{	
+		padding: 60px 25% 90px 25%;
+	}
+
+	.lineHorizontal{
+		display: block;
+	}
+
+	.registerBlock{
+		margin-top: 50px;	
+	}
+
+}
+
+
+@media (max-width: 1000px){	
+	.sinUpContainer{	
+		padding: 60px 25% 90px 15%;
+	}
+
+}
+
+
+@media (max-width: 800px){	
+	.sinUpContainer{	
+		padding: 60px 25% 90px 10%;
+	}
+
+}
+
+@media (max-width: 700px){	
+	.sinUpContainer{	
+		padding: 60px 5% 90px 5%;
+	}
+
+}
+
+@media (max-width: 610px){
+	.gridContainer{
+		display: grid;
+		grid-template-columns: 450px;
+	}
+	.sinUpContainer{	
+		padding: 60px 15% 90px 10%;
+	}
+	.btnForm2 {
+		width: 200px;
+	}
+}
+
+@media (max-width: 540px){	
+	.sinUpContainer{	
+		padding: 60px 3% 90px 3%;
+	}
+
+}

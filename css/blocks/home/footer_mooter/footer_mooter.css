@@ -1,0 +1,227 @@
+
+.footer_wrap{
+
+}
+
+.footer_black{	
+height: 45px;
+	background-color: #333333;	
+}
+
+.foterContBlock{
+	background-color: #f8f8f8;
+	padding-left: 15%;
+	padding-right: 15%;
+	padding-bottom: 3%;
+}
+
+.footer_content{
+	display: -webkit-flex;
+	align-content: flex-start;
+	justify-content: left;
+	font-weight: 400;
+	font-family:  'montserratlight';
+	padding-top: 60px;
+	white-space: nowrap;
+}
+
+
+.padding_flex{
+	padding-right: 10%;
+}
+
+
+.title_refer{
+	padding-bottom: 25px;
+}
+
+
+.mini_refer{
+	font-size: 14px;
+	line-height: 30px;
+	color: #727272;
+	font-weight: 300;
+	font-family:'montserratlight';
+	text-align: left;
+}
+
+.two_blocks{
+	display: grid;
+	/* создаём 3 колонки и укажем функцию minmax()в которой укажем минимальную ширину, например 100 пикселей и максимальную ширину равную самой маленькой картинке в колонке */
+	
+	grid-template-columns: repeat(2,1fr);
+	grid-gap:10px;
+	margin-top: 3%;
+}
+
+.black_block{
+	width: 570px;
+	height: 200px;
+	background-color: #333333;
+	font-size: 36px;
+	letter-spacing: 2px;
+	line-height: 48px;
+	color: #ffffff;
+	font-weight: 700;
+	font-family: 'montserratlight';
+	text-align: center;
+}
+
+.shiroco{
+	font-weight: 700;
+	font-family:'montserratextrabold';
+	margin-top: 50px;
+}
+
+.tonko{
+	font-weight: 400;
+	font-family:'montserratlight';
+	color: #ffffff;
+}
+
+
+.green_block{
+	width: 570px;
+	height: 200px;
+	background-color: #00c8c8;
+}
+
+
+
+.social-icons{
+	/* объявила этот блок flex */
+	display: flex;
+
+	/* убрать разные точки от тега ul и li */
+	list-style: none;
+
+	/* в центре по иси х */
+	justify-content: center;
+
+	/* не переносится на другую строку */
+	flex-wrap: wrap;
+
+	/* центрировала иконки по иси у */
+    padding: 85px;
+    
+}
+
+
+
+.icol{	
+	color: #ffffff;
+	padding-right: 35px;
+}
+
+/* увеличиваю размер иконок*/
+i.isize{
+    font-size: 36px;
+}
+
+.black_wrap{
+	display: -webkit-flex;
+	align-content: flex-start;
+	justify-content: center;
+}
+
+.avenue{
+	font-size: 13px;
+	line-height: 30px;
+	color: #999999;
+	font-weight: 400;
+	font-family:  'montserratlight';
+	padding-right: 40%;
+}
+
+.design a{
+	font-size: 13px;
+	line-height: 30px;
+	color: #777777;
+	font-weight: 400;
+	font-family:  'montserratsemibold';
+	text-align: right;
+	padding: 20px;
+}
+
+
+@media (max-width: 1600px){
+	.foterContBlock{
+		padding-left: 10%;
+		padding-right: 10%;
+	}
+}
+
+@media (max-width: 1420px){
+	.foterContBlock{
+		padding-left: 3%;
+		padding-right: 3%;
+	}	
+}
+
+@media (max-width: 1350px){
+	.black_block{
+		width: 450px;
+	}
+
+	.green_block{
+		width: 450px;
+	}
+    
+
+	/* появиться персональный скрол(горизонтальный) */
+	.footer_content{
+		overflow-x: auto;
+	}
+
+}
+
+@media (max-width: 1100px){
+	  .two_blocks{
+            grid-template-columns: repeat(1,1fr);
+            place-items: center;
+     }
+
+	.black_block{
+		grid-column: 1 / 2;   /* начало колонки(1) и конец колонки(2) */
+		grid-row: 1 / 2;       /* начало в ряду(1) и конец в ряду(2) */
+	}
+
+	.green_block{
+		grid-column: 1 / 2;   /* начало колонки(1) и конец колонки(2) */
+		grid-row: 2 / 3;       /* начало в ряду(2) и конец в ряду(3) */
+	}
+
+   
+
+    .avenue{	
+	padding-right: 20%;
+}
+
+}
+
+@media (max-width: 850px){
+	.footer_black{	
+	height: 55px;
+  }
+  .avenue{	
+  	padding-right: 10%;
+	padding-left: 15px;
+}
+}
+
+
+
+@media (max-width: 650px){
+	.black_block{
+		width: 320px;
+	}
+
+	.green_block{
+		width: 320px;
+	}
+	  .avenue{	
+	padding-right: 5%;
+	padding-left: 7px;
+}
+
+}

@@ -1,0 +1,100 @@
+
+
+
+
+.items_wrap{
+	/* max-width: 1860px; */
+	/* height: 1574px;   на ошибках учатся - НЕ ЗАДАВАЙ высоту в блоках, которые содержат контент. В будущем могут блоки наезжать другу на друга.  У меня уже под конец вёрстки страницы футер стал наезжать на этот длок... Потому что  при уменьшении ширина увеличивалась высота с контентом и она значительно превышала ограничение height: 1574px то есть происходило "переполнение" блока... Поэтому высоту лучше не указывать.. */
+	margin: 60px 142px 60px 137px;
+}
+
+
+@media (max-width: 1800px){
+	.items_wrap {	    
+	    margin: 60px 80px;
+	}
+	
+}
+
+@media (max-width: 1700px){
+	.items_wrap {
+	    margin: 60px 10px 60px 137px;
+	}
+	
+}
+
+@media (max-width: 1700px){
+	/* .items_wrap {
+	    margin: 60px 0 20px 15%;
+	} */
+	
+}
+
+
+.line2,
+.line{
+	width: 100%;
+	height: 1px;
+	background-color: #eeeeee;
+}
+
+.line2{
+	margin-top: -5%;
+}
+
+.items_menu {
+	padding: 60px 0px 60px 0px;
+}
+
+
+.refers{
+	/* выстраиваю список(li) в одну линию и заодно убираю точки и подчёркивания */
+	display: flex;
+	list-style: none;
+	justify-content: left;
+	/* чтобы элементы переносились если они не будут помещаться в один ряд */
+    flex-wrap: wrap;
+}
+
+
+
+li.refer {
+	/* отступ слева для всех элементов списка */
+	margin-left:60px;
+
+	/* все относится к шрифту */
+	font-size: 13px;
+	line-height: 20px;	
+	font-weight: 400;
+	font-family:'montserratsemibold';
+}
+
+
+
+li.refer a {
+	color: #000;
+	transithion-property: color;
+	transition-duration: 500ms;
+}
+
+.link_one,
+li.refer:first-child{
+	/* для первого элемента списка отсуп слева обнулили */
+	margin-left:0;
+	color: #00c8c8;
+}
+
+
+li.refer a:hover, li.refer a:active, li.refer a:focus {
+	color: #00c8c8;
+}
+
+@media (max-width: 600px) {
+	.items_wrap{	
+	margin: 60px 102px 0px 107px;
+}
+li.refer:first-child{
+	/* для первого элемента списка отсуп слева обнулили */
+	margin-left:60px;
+}
+	}

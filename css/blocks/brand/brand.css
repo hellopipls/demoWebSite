@@ -1,0 +1,269 @@
+
+
+/* header */
+/* вынесли пункты меню nav(с модальными окнами)изблока slaider_brand */
+.brand_menu{	
+	background-color: #f8f8f8;
+	padding-bottom: 50px;
+}
+
+
+
+
+.slaider_brand{
+	/* на заднем фоне будет картинка город*/
+	background: url("img/town_header.png") no-repeat; 
+	height: 550px;
+}
+
+/* поверх фоновой картинки наложили чёрный фон и придали ему прозрачность*/
+.prozrachny{
+	background-color: #333333;
+	background: rgba(0, 0, 0, 0.5); /* Black background with transparency */
+	height: 550px;
+}
+
+.text_head_brand{
+	text-align: center;
+	margin-top: 4%;
+}
+
+.text_brand{
+	font-size: 48px;
+	letter-spacing: 2px;
+	line-height: 54px;
+	color: #ffffff;
+	font-weight: 700;
+	font-family: 'montserratlight';
+}
+
+.slogan{
+	font-size: 30px;
+	letter-spacing: 2px;
+	line-height: 54px;
+	color: #ffffff;
+	font-weight: 400;
+	font-family: 'montserratlight';
+}
+
+
+/* main  */
+
+.main_brand{
+	padding: 60px 15% 60px 15%;
+}
+
+.contentBrand_wrap{  
+	display:grid;
+	grid-template-columns: repeat(2, minmax(100px, 720px));
+	grid-gap:20px;
+}
+
+.intro_img{
+	grid-column: 1 / 2;   /* начало колонки(1) и конец колонки перед колонкой (2) */
+	grid-row: 1 / 3;       /* начало в ряду(1) и конец перед рядом(3) */
+	max-width: 720px;
+	height: 401px;
+	background: url("img/intro.png") center no-repeat;
+}
+
+
+.intro_text{
+	grid-column: 2 / 3;   /* начало колонки(2) и конец перед колонкой (3) */
+	grid-row: 1 / 2;       /* начало в ряду(1) и конец перед рядом(2) */
+	max-width: 720px;
+	/* height: 280px; */
+}
+
+
+.tading_img{
+	grid-column: 2 / 3;   /* начало колонки(2) и конец колонки перед колонкой (3) */
+	grid-row: 2 / 4;       /* начало в ряду(2) и конец перед рядом(4) */
+	max-width: 720px;
+	height: 401px;
+	background: url("img/trading.png") center no-repeat;
+}
+
+.tading_text{
+	grid-column: 2 / 3;   /* начало колонки(2) и конец перед колонкой (3) */
+	grid-row: 4 / 5;       /* начало в ряду(4) и конец перед рядом(5) */
+	max-width: 720px;
+	/* height: 200px; */
+}
+
+.values_img{
+	grid-column: 1 / 2;   /* начало колонки(1) и конец колонки перед колонкой (2) */
+	grid-row: 3 / 5;       /* начало в ряду(3) и конец перед рядом(5) */
+	max-width: 720px;
+	height: 401px;
+	background: url("img/value.png") no-repeat;
+	margin-top: -30px;
+}
+
+.values_text{
+	grid-column: 1 / 2;   /* начало колонки(2) и конец перед колонкой (3) */
+	grid-row: 5 / 6;       /* начало в ряду(1) и конец перед рядом(2) */
+	max-width: 720px;
+	/* height: 200px; */
+	margin-top: -50px;
+}
+
+.awards{
+	grid-column: 2 / 3;   /* начало колонки(2) и конец перед колонкой (3) */
+	grid-row: 5 / 6;       /* начало в ряду(1) и конец перед рядом(2) */
+	max-width: 720px;
+	/* height: 200px; */
+}
+
+
+.title_intro{
+	font-size: 18px;
+	line-height: 20px;
+	color: #575153;
+	font-weight: 400;
+	font-family: "montserratextrabold";
+	padding: 30px 0 20px 0;
+}
+
+.mini_title{
+	font-size: 13px;
+	line-height: 20px;
+	color: #727272;
+	font-weight: 400;
+	font-family: 'montserratlight';
+	padding: 0px 0 10px 0;
+	/* выделила текст жирным шрифтом !!! */
+	font-weight: bold;
+}
+
+.mini_intro{
+	font-size: 15px;
+	line-height: 22px;
+	color: #8e8c8c;
+	font-weight: 400;
+	font-family: "montserratlight";
+	/* снизу этого блока пустота на 30 пикселей */
+	padding: 0px 0 20px 0;
+
+	/* текст прилипает равномерно к левому и правому краю без переноса слов */
+	text-align: justify;
+}
+
+.border_intro{
+	width: 570px;
+	height: 1px;
+	background-color: #eeeeee;
+}
+
+.awards_wrap{
+	display: flex;
+	/* раздвинула равномерно дочерние блоки как гармошку при этом края прижаты к бокам слева и справа*/
+	justify-content: space-between;
+	padding: 30px 0 0 0;
+	    flex-wrap: wrap;
+}
+
+
+@media (max-width: 1700px){
+	.main_brand{
+		padding: 60px 190px 60px 140px;
+	}
+}
+
+
+
+@media (max-width: 1500px){
+	.main_brand{
+		padding: 60px 90px 60px 40px;
+	}
+}
+
+
+
+@media (max-width: 1330px){
+
+	.contentBrand_wrap{  
+		display:grid;
+		grid-template-columns: repeat(1, minmax(100px, 720px));	
+	}
+
+	.intro_img{
+		grid-column: 1 / 2;   /* начало колонки(1) и конец колонки перед колонкой (2) */
+		grid-row: 1 / 3;       /* начало в ряду(1) и конец перед рядом(3) */	
+	}
+
+
+	.intro_text{
+		grid-column: 1 / 2;   /* начало колонки(1) и конец колонки перед колонкой (2) */
+		grid-row: 3 / 4;       /* начало в ряду(3) и конец перед рядом(4) */	
+	}
+
+
+	.tading_img{
+		grid-column: 1 / 2;   /* начало колонки(1) и конец колонки перед колонкой (2) */
+		grid-row: 4 / 6;       /* начало в ряду(4) и конец перед рядом(6) */	
+	}
+
+	.tading_text{
+		grid-column: 1 / 2;   /* начало колонки(2) и конец перед колонкой (3) */
+		grid-row: 6 / 7;       /* начало в ряду(6) и конец перед рядом(7) */
+	}
+
+	.values_img{
+		grid-column: 1 / 2;   /* начало колонки(1) и конец колонки перед колонкой (2) */
+		grid-row: 7 / 9;       /* начало в ряду(7) и конец перед рядом(9) */
+	}
+
+	.values_text{
+		grid-column: 1 / 2;   /* начало колонки(2) и конец перед колонкой (3) */
+		grid-row: 9 / 10;       /* начало в ряду(9) и конец перед рядом(10) */
+		padding: 60px 0 0 0;
+	}
+
+	.awards{
+		grid-column: 1 / 2;   /* начало колонки(1) и конец перед колонкой (2) */
+		grid-row: 10 / 11;       /* начало в ряду(10) и конец перед рядом(11) */	
+	}
+
+	.mini_intro{
+		padding: 0px 0 30px 0;
+	}
+	.border_intro{
+		width: 570px;
+	}
+    .main_brand{
+		padding: 60px;
+	}
+
+}
+
+
+@media (max-width: 750px){
+
+.values_img{
+		background: url("img/value_min.png") no-repeat;
+	}
+
+	.mini_intro{
+		padding: 0px 0 20px 0;
+	}
+	.border_intro{
+		width: 470px;
+	}
+    .main_brand{
+		padding: 20px;
+	}
+
+}
+
+
+@media (max-width: 650px){
+	.tading_img{
+		background: url("img/ttrandin.png") center no-repeat;
+		
+	}
+    .design{
+    	padding-right: 30%;
+    }
+
+}

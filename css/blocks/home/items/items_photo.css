@@ -1,0 +1,416 @@
+
+
+/* общие свойства для всех фото-карточек */
+.cont {	
+	display: flex;
+	font-size: 21px;
+	letter-spacing: 1px;
+	color: #9a9a9a;
+	font-weight: 300;
+	font-family: 'montserratlight';
+	background-color:#f8f8f8;
+	padding-left: 31px;
+	padding-top: 15px;
+}
+
+i.fab,
+i.fas{
+	font-size: 15px;
+	justify-content: flex-start;
+}
+
+
+
+
+
+
+/* отдельные свойства для фото № 5  */
+.cont_big{
+	width: 420px;
+	height: 650px;
+	filter: drop-shadow(0 0 12px rgba(0,0,0,0.14));
+	background-color: #f8f8f8;	
+}
+
+.detals{
+	width: 421px;
+	height: 154px;
+	background-color: #ffffff;
+	/* прижала выпадающий блок к низу  */
+	bottom:0;
+}
+
+.cost{
+	display: flex;
+	font-size: 21px;
+	letter-spacing: 1px;
+	color: #9a9a9a;
+	font-weight: 300;
+	font-family: 'montserratlight';	
+	padding-left: 31px;
+	padding-top: 15px;
+}
+
+.zacherkni{
+	text-decoration: line-through;
+}
+
+
+.thumb{
+	padding-left: 79%;
+}
+
+
+/* размеры и оформление маленькой картинки */
+.front{
+	width: 80px;
+	height: 100px;
+	border: 1px solid #ffffff;
+}
+
+/* размеры и оформление маленькой картинки */
+.back{
+	width: 80px;
+	height: 100px;
+	margin-top: 15px;
+	border: 1px solid #ffffff;
+
+}
+
+/* при наведении курсора меняем свойство маленькой картинки */
+.back:hover{	
+	border: 1px solid #727272;
+}
+
+
+/* содержимое выпадающего блока */
+.link_details{	
+	font-size: 48px;
+	line-height: 20px;
+	color: #ffffff;
+	font-family:'montserratlight';
+	filter: drop-shadow(0px 2px 8px rgba(0,0,0,0.13));
+}
+
+
+.link_details .for_ul .focus{
+	/* делаем блочными элементы li a ul */
+	display: block;
+	width: 420px;
+	height: 154px;
+	/* сделала этот класс невидимым scale(0);  а вот так scale(1)-будут видимым;*/
+	transform: scale(0);
+
+	/* плавное появление выпадающего блока(из маленькой формы в центре на весь блок)здорово */
+	-webkit-transition: -webkit-transform 600ms ease-out;
+	transition: transform 600ms ease-out;
+}
+
+a .icon_img{
+	font-size: 48px;
+	line-height: 20px;
+	color: #ffffff;
+	font-family: 'montserratlight';
+	filter: drop-shadow(0px 2px 8px rgba(0,0,0,0.13));
+	padding-left: 50%;
+	padding-top: 10%;
+}
+
+
+.focus{
+	background-color: #ffffff;
+	color: #000;
+	margin-top: 28%;
+}
+
+.link_details .for_ul:hover .focus{	
+	/* сделала этот класс видимым  при наведении на блок ul*/
+	transform: scale(1);
+}
+
+
+
+/* выпадающий блок */
+.text3,
+.text2,
+.text1{
+	width: 391px;
+	height: 23px;
+	font-family: 'montserratlight';
+	font-size: 13px;
+	line-height: 20px;
+	font-weight: 400;
+	text-align: center;
+
+}
+
+
+/* с помощью flex выстраиваю картинки(иконки,кнопки)в один ряд, центрирую и прижимаю их к верху блока */
+
+.buttons{
+	display: -webkit-flex;
+	align-content: flex-start;
+	justify-content: center;
+
+}
+
+.shop {
+	padding-left: 5px;
+}
+
+
+/* устанавливаю расстояние между картинками(кнопками,иконками )все они из блока .buttons */
+.corzina,
+.tuk,
+.hard{
+	margin-right: 10px;
+}
+
+.corzina{
+	width: 30px;
+	height: 30px;
+	border-radius: 15px;
+	background-color: #00c8c8;	
+}
+
+
+/* всплывающий палец рядом с кнопкой */
+.pink .icon_img{
+	margin-left: 35%;
+	margin-top: -4%;
+	opacity: 0;
+}
+
+/* всплывающий палец рядом с кнопкой */
+.pink:hover .icon_img{
+	opacity: 1;
+}
+
+/* конец специфических свойств для фото пять */
+
+
+
+/*grid-сетка; главный класс_обёртка для всех карточек  */
+.photo_wrap{
+	/* с этой строки начинается объявление grid-блока */
+	display: grid;
+	/* создаём 4-ре колонки и укажем функцию minmax()в которой укажем минимальную ширину, например 100 пикселей и максимальную ширину равную самой маленькой картинке в колонке */
+	grid-template-columns: repeat(4, minmax(100px, 453px));
+	grid-gap:35px;
+}
+
+/* первая карточка */
+.first_smoll{
+	grid-column: 1 / 2;   /* начало колонки(1) и конец колонки(2) */
+	grid-row: 1 / 2;       /* начало в ряду(1) и конец в ряду(2) */
+
+	max-width: 453px;
+	height: 500px;
+	background: url("img/first_items.png") center 0% no-repeat;
+	/* center передвигает само изображение на картинке в центр блока!!!!) */
+	/* 0% для того чтобы прижать картинку к верху блока (если она не прижалась автоматически) */
+}
+
+
+
+/* вторая карточка */
+.second_smoll{
+	grid-column: 2 / 3; /* начало блока в колонке(2) а конец перед колонкой(3) то есть занимает только одну колонку */
+	grid-row: 1 / 2;   /* начало в ряду(1) а конец перед рядом(2) то есть блок занимает один ряд */
+	max-width: 453px;
+	height: 500px;
+	background: url("img/second_items.png") center 0% no-repeat;
+}
+
+
+/* третья карточка */
+.thert_big{
+	grid-column: 3 / 5; /* начало в колонке(3) а конец перед колонкой(5) то есть растянули блок по ШИРИНЕ на две колонки*/
+	grid-row: 1 / 3; /* начало в ряду(1) а конец перед рядом(3)  то есть растянули блок по ВЕРТИКАЛИ на два ряда вниз*/
+	max-width: 870px;
+	height: 704px;
+	background: url("img/thert_items.png") no-repeat;
+	background-size: cover;
+}
+
+/* четвёртая карточка */
+.ferth_big{
+	grid-column: 1 / 3; /* начало в колонке(1) и конец перед колонкой(3)  то есть растянули блок по ШИРИНЕ на две колонки*/
+	grid-row: 2 / 4;    /* начало в ряду(2) а конец перед рядом(4)  то есть растянули блок по ВЕРТИКАЛИ на два ряда вниз*/
+
+	max-width: 870px;
+	height: 704px;
+
+	background: url("img/forth_items.png") no-repeat;
+
+	/* чуть-чуть подняла блок вверх !!! */
+	margin-top: -0.7em;
+
+	/* чтобы картинка заняла полностью место контейнера!!! */
+	background-size: cover;
+
+}
+
+/* пятая карточка! */
+.fives_smoll{
+	grid-column: 3 /4; /* начало в колонке(3) и конец блока в колонке(4)   то есть блок занимает только одну колонку */
+	grid-row: 3 / 4;    /* начало в ряду(3) и конец в ряду(4) то есть блок занимает один ряд */
+	width: 420px;
+	height: 650px;
+	background: url("img/fifth_items.png") center 0px no-repeat;
+
+}
+
+
+.first_smoll:hover,
+.second_smoll:hover,
+.thert_big:hover,
+.ferth_big:hover,
+.six_smoll:hover,
+.fives_smoll:hover{
+	filter: drop-shadow(0 0 12px rgba(0,0,0,0.14));
+	/* задаём плавность при появлении тени */	
+	transition-duration: 700ms;
+}
+
+/* шестая карточка */
+.six_smoll{
+	grid-column: 4 / 5;/* начало в колонке(4) и конец блока в колонке(5)   то есть блок занимает только одну колонку */
+	grid-row: 3 / 4;   /* начало в ряду(3) и конец в ряду(4) то есть блок занимает один ряд */
+	margin-left: 20%;
+    max-width: 400px;
+    height: 485px;
+    background: url("img/six_items.png") center no-repeat;
+    background-size: cover;
+}
+
+
+/*  */
+
+
+/* перестраиваю ряды при уменьшении окна броузера*/
+@media (max-width: 1600px){
+
+	.photo_wrap{
+		/* с этой строки начинается объявление grid-блока */
+		display: grid;
+		/* на этой ширине оставила 2 колонки и указала функцию minmax()в которой минимальная ширина 300 пикселей и максимальную ширину 500 пикселей */
+		grid-template-columns: repeat(2, minmax(300px, 500px));
+
+		/* уменьшила отступ между картинками */
+		grid-gap:15px;
+          place-items: center;
+	}
+
+
+.first_smoll{
+	-grid-column: 1 / 2;   /* начало колонки(1) и конец колонки(2) */
+	grid-row: 1 / 2;       /* начало в ряду(1) и конец в ряду(2) */
+
+	width: 453px;
+	height: 500px;
+}
+
+
+/* вторая карточка */
+.second_smoll{
+     width: 453px;
+}
+
+	/* третья карточка */
+	.thert_big{
+		grid-column: 1 / 3; /* начало в колонке(3) а конец перед колонкой(5) то есть растянули блок по ШИРИНЕ на две колонки*/
+		grid-row: 2 / 4; /* начало в ряду(1) а конец перед рядом(3)  то есть растянули блок по ВЕРТИКАЛИ на два ряда вниз*/
+		width: 870px;
+
+	}
+
+	/* четвёртая карточка */
+	.ferth_big{
+		grid-column: 1 / 3; /* начало в колонке(1) и конец перед колонкой(3)  то есть растянули блок по ШИРИНЕ на две колонки*/
+		grid-row: 4 / 6;    /* начало в ряду(2) а конец перед рядом(4)  то есть растянули блок по ВЕРТИКАЛИ на два ряда вниз*/
+		/* отменяю поднимание блока вверх !!! */
+		margin-top: 0;
+          width: 870px;
+	}
+
+	/* пятая карточка */
+	.fives_smoll{
+		grid-column: 1 /2; /* начало в колонке(3) и конец блока в колонке(4)   то есть блок занимает только одну колонку */
+		grid-row: 6 / 7;    /* начало в ряду(3) и конец в ряду(4) то есть блок занимает один ряд */
+	}
+
+	/* шестая карточка */
+	.six_smoll{
+		grid-column: 2 / 3;/* начало в колонке(4) и конец блока в колонке(5)   то есть блок занимает только одну колонку */
+		grid-row: 6 / 7;   /* начало в ряду(3) и конец в ряду(4) то есть блок занимает один ряд */
+		margin-left: 10px;
+		width: 400px;
+    height: 485px;
+    background: url("img/six_items.png") center no-repeat;
+    background-size: cover;
+        margin-top: -150px;
+	}
+
+}
+
+
+/* ещё раз перестраиваю ряды при уменьшении окна броузера до 950 пикселей*/
+@media (max-width: 1100px){
+
+	.photo_wrap{
+		/* с этой строки начинается объявление grid-блока */
+		display: grid;
+		/* на этой ширине оставила 1 колонку и указала ширина, 320 пикселей */
+		grid-template-columns: repeat(1, 320px);
+
+		/*ещё раз  уменьшила отступ между картинками */
+		grid-gap:15px;
+
+		/* расположила все карточки по центру блока (в одну колонку)*/
+          place-content: center;
+	}
+
+@media (max-width: 500px){
+   .photo_wrap {
+
+   }
+}
+
+	/* вторая карточка */
+	.second_smoll{
+		grid-column: 1 / 2; /* начало блока в колонке(2) а конец перед колонкой(3) то есть занимает только одну колонку */
+		grid-row: 2 / 3;   /* начало в ряду(1) а конец перед рядом(2) то есть блок занимает один ряд */
+	}
+
+	/* третья карточка */
+	.thert_big{
+		grid-column: 1 / 2; /* начало в колонке(3) а конец перед колонкой(5) то есть растянули блок по ШИРИНЕ на две колонки*/
+		grid-row: 3 / 4; /* начало в ряду(1) а конец перед рядом(3)  то есть растянули блок по ВЕРТИКАЛИ на два ряда вниз*/
+		width: 453px;
+		background: url("img/thert_items.png") center no-repeat;
+	}
+
+	/* четвёртая карточка */
+	.ferth_big{
+		grid-column: 1 / 2; /* начало в колонке(1) и конец перед колонкой(3)  то есть растянули блок по ШИРИНЕ на две колонки*/
+		grid-row: 4 / 5;    /* начало в ряду(2) а конец перед рядом(4)  то есть растянули блок по ВЕРТИКАЛИ на два ряда вниз*/
+		width: 453px;
+		background: url("img/forth_items.png") center no-repeat;
+	}
+
+	/* пятая карточка */
+	.fives_smoll{
+		grid-column: 1 /2; /* начало в колонке(3) и конец блока в колонке(4)   то есть блок занимает только одну колонку */
+		grid-row: 6 / 7;    /* начало в ряду(3) и конец в ряду(4) то есть блок занимает один ряд */
+	}
+
+	/* шестая карточка */
+	.six_smoll{
+		grid-column: 1 / 2;/* начало в колонке(4) и конец блока в колонке(5)   то есть блок занимает только одну колонку */
+		grid-row: 5 / 6;   /* начало в ряду(3) и конец в ряду(4) то есть блок занимает один ряд */
+		margin-top: 0;
+	}
+
+}
+

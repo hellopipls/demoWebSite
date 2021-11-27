@@ -1,0 +1,250 @@
+
+
+
+/* три мини текста с кнопкой-ссылкой "посмотреть детали" */
+.contentStores_wrap{
+	padding: 60px 290px 60px 240px;
+}
+
+
+@media (max-width: 1400px){
+	.contentStores_wrap {
+		padding: 60px 190px 60px 140px;
+	}
+}
+
+
+
+@media (max-width: 1000px){
+	.contentStores_wrap {
+		padding: 60px 90px 60px 90px;
+	}
+}
+
+
+@media (max-width: 950px){
+	.contentStores_wrap {
+		padding: 60px 30px 60px 15px;
+		overflow-x: auto;
+	}
+}
+
+
+.locstion_text{
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-gap: 30px;
+
+}
+
+/* конец три мини текста с кнопкой-ссылкой "посмотреть детали" */
+
+
+.locstion_map_wrap{
+	margin: 60px 0;
+	background-color: #f8f8f8;
+	display: grid;
+	grid-template-columns: minmax(320px, 1368px) minmax(320px, 663px);
+	overflow-x: auto;
+}
+
+.map_img{
+	background: url("img/map_greyscale.png") no-repeat;
+	position: relative;
+}
+
+i.markerMap{
+	font-size: 36px;
+	line-height: 36px;
+	color: #00c8c8;
+	position: absolute;
+	margin: 25% 45%;
+}
+
+.modal_view{	
+	background-color: #f8f8f8;
+	margin: 30px 60px 60px 30px;
+	height: 530px;
+}
+
+.social-icons_storis{
+	/* объявила этот блок flex */
+	display: flex;
+
+	/* убрать разные точки от тега ul и li */
+	list-style: none;
+
+	/* в центре по иси х */
+	justify-content: left;
+
+	/* не переносится на другую строку */
+	flex-wrap: wrap;
+
+	/* центрировала иконки по иси у */
+	padding-top: 15px;
+
+}
+
+.icol_storis{
+	width: 35px;
+	height: 35px;
+	border-radius: 25px;
+	background-color: #727272;
+	margin-right: 10px;
+	position: relative;
+}
+
+.icon_storis{
+	color: #ffffff;
+	position: absolute;
+	margin-top: 7px;
+	margin-left: 10px;
+}
+
+.myProp{
+	margin-right: 5px;
+}
+
+.style_text{
+	font-size: 14px;
+	line-height: 32px;
+	color: #8e8c8c;
+	font-weight: 300;
+	font-family: 'montserratlight';
+}
+
+
+
+/*  начало модальноe окнo2 */
+
+.detals_stores{
+	position: absolute;
+	background-color: rgba(115,115,115,0);
+	width: 553px;
+	left: 80%;
+	/* сделал блок не просто невидимым, а даже не занимаем пространство(это важно)  */
+	display: none;  
+	
+	/* выносим модальное окно за пределы сайта на 50% вправо */
+	/* webkit эта приставка означает поддержку броузера Chrome Safari Opera Firefox Android iOS*/
+	-webkit-transform: translate(50%, 0%);
+	/* ms эта приставка означает поддержку броузера IE(интернет Эксплрорер)*/
+	-ms-transform: translate(50%, 0%);
+
+	/* это общая для всех.Строка означает передвижение данного блока  вправо и вниз(отрицательныее числа наоборот-влево и вверх)*/
+	transform: translate(50%, 0%);	
+}
+
+
+.modal2::after {
+	content: "";
+	/*  "вырываем" из потока блок с модальным окном при помощи фиксированного позиционирования.  */
+	position: fixed;
+	/* делаем блок не видимым */
+	display: none;  
+
+	/*  при помощи свойств "top", "left", "right", "bottom" растянем модальное окно по ширине на весь экран.*/
+	top: 0;
+	left: 0;
+    right: 0;
+    bottom: 0;
+    /* Z-index - нужен для того, чтобы расположить окно над всеми элементами. 
+Если у какого-то другого элемента значение этого свойства будет выше, то модальное окно не перекроет его.  */
+    z-index: 1000;
+}
+
+
+
+/* делаем блок(модальное окно)видимым */
+.modal2:target:before {
+	display: block;
+}
+
+/* активируем модальный блок */
+.modal2:target .detals_stores {
+	top: 1100px;    
+	/* вернула видимость блоку  .detals_stores */
+	display: block;  
+	/* отрегулировала обратное передвижение данного блока при появлении влево на -50% от запрятанного места (см.стр.132)*/
+	/*  при положительных числах (вправо и вниз), а отрицательные числа наоборот (влево и вверх) */
+	-webkit-transform: translate(-50%, 0);
+	-ms-transform: translate(-50%, 0);
+	transform: translate(-50%, 0);
+	-webkit-transition: -webkit-transform 1000ms ease-out;
+	transition: transform 1000ms ease-out;
+	/* последняя строка это скорость появления окна. Увенличивая число мы замедляем появление модального окна. */
+}
+
+
+@media (max-width: 1800px){
+	.modal2:target .detals_stores {
+		top: 1150px;
+	}
+	.modal_view{
+		margin: 30px;
+	}
+
+}
+
+@media (max-width: 1500px){
+	.detals_stores{	
+		/* width: 553px; */
+		left: 75%;
+	}
+}
+
+
+@media (max-width: 1300px){
+	.detals_stores{	
+		 width: 453px;
+		left: 70%;
+	}
+}
+
+@media (max-width: 1200px){ 
+    .locstion_map_wrap{
+        grid-template-columns: 1368px;
+         overflow-x: auto;
+    }
+
+     .modal_view{
+        grid-column: 1 / 2;   /* начало колонки(1) и конец колонки(2) */
+        grid-row: 1 / 2;       /* начало в ряду(2) и конец в ряду(3) */
+        height: 530px;
+    }
+    .map_img{
+        grid-column: 1 / 2;   /* начало колонки(1) и конец колонки(2) */
+        grid-row: 2 / 3;       /* начало в ряду(1) и конец в ряду(2) */
+        height: 530px;
+       
+    }
+
+    .modal2:target .detals_stores {
+        top: 1200px;
+        left: 50%;
+    }
+ }
+
+@media (max-width: 1000px){ 
+    .modal2:target .detals_stores {
+        top: 1250px;
+    }
+ }
+
+/* конец модального окна2 */
+
+
+/*это всё чтобы прижать кнопки к низу блока (сам блок является grid)*/
+.london,
+.new_yourk,
+.paris{
+	flex-direction: column;
+    display: flex;
+    justify-content: space-between;
+}
+
+.padd{
+	padding-top: 20px;
+}
+
+

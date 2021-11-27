@@ -1,0 +1,675 @@
+
+.items_book_wrap{
+	margin: 60px 100px 60px 100px;
+}
+
+.privatW{
+    width: 30%;
+}
+
+.i_book{
+	width: 40px;
+    height: 40px;
+    background-color: white;  
+    text-align: center;
+    border-radius: 25px;
+    margin-left: 50px;
+    margin-right: 25px;
+}
+
+ .i_book:hover {
+    box-shadow: inset 0px 0px 5px 1px grey, 0px 0px 10px 5px grey;
+}
+
+/* тень вокруг картинки: 0-смешщение по горизонтали; 10-смещ.по вертикали; 15-рызмытие тени; 10-растяжение тени;#fff-цвет тени */
+/* можно задавать (+ -) по горизонтали:+3(вправо) -3(влево)   по вертикали: +3(в_низ) -3(в_верх)*/
+/*  inset 0px 10px 15px 10px #fff; так тень будет внутри картинки(блока)*/
+
+
+/* тносится к внутреннему оформлению первой карточки */
+.heart_book{
+width: 42px;
+height: 42px;
+border-radius: 21px;
+background-color: #ffffff;
+}
+
+
+/* когда рамку выделяю тенью то иконка не дёргается при наведении */
+.heart_book:hover{
+	/* задала внутреннюю тень(inset) и внешнюю(через запятую) */
+	box-shadow: inset 0px 0px 5px 1px blue, 0px 0px 5px 5px blue;	
+}
+
+
+/* изменяю стили иконки .fa-heart-это официальный класс  .iconHeartBook - это моё наименования класса для дополнительных свойств*/
+.fa-heart.iconHeartBook:before {
+	/* это "имя"" иконки взяла из инспектора_броузера */
+    content: "\f004";
+    /* это внутринний фон иконки чёрный */
+    background-color:  transparent;
+    /* это ободок(рамка) самой иконки белый */
+    color: black;
+    /* изменила размер самой иконки */
+       font-size: 28px;
+       /* сдвинула её в_право (но поднять наверх не могу!?) */
+    margin-left: 7px;
+/* чтобы поднять(текст, блок) наверх(вниз) прописала позицию_relative и после неё использую любые их четырех направлений left right top  и bottom */
+    position: relative;   
+    top: 7px;
+}
+
+
+.heart_book:hover {
+	filter: drop-shadow(0px 2px 8px rgba(0,0,0,0.13));
+}
+
+/* полностью прозрачный фон блока,при этом его содержимое всё видно!!! */
+/* rgba(0, 0, 0, 0.5); это полу прозрачный !!! */
+.fon_block{
+	background: rgba(0, 0, 0, 0);
+}
+
+
+/* сделали невидимым блок cont (принадлежащий блоку first_book) */
+.first_book .cont{
+    opacity: 0; 
+}
+
+/* при наведении на блок first_book сделали видимым блок cont */
+.first_book:hover .cont{
+    opacity: 1; 
+}
+
+
+.link_icons {
+	margin-top: 250px;
+	margin-right: 130px;
+    margin-left: 90px;
+}
+
+.refer_flax{
+    display: flex;
+    /* помни! что justify-content раздвигает элементы только если внутри родителя дети заключены каждый  в свои div т.е.на( ul li a p img H) он не сработает */
+    justify-content: space-around;
+}
+
+.finger{
+    margin-left: 90px;
+}
+
+
+/* конец внутреннего оформления первой карточки */
+
+
+
+/* общий_grid для всех карточек */
+.photo_book_wrap{
+	/* с этой строки начинается объявление grid-блока */
+	display: grid;
+	/* создаём 4-ре колонки и три ряда  */
+	grid-template-columns: repeat(4, 1fr);
+	/* поскольку высота у всех фото одинаково, то для каждого ряда сразу прописываю высоту 500px но у одной auto чтобы внутренний контекст не вылазил вниз; 1fr карточка занимает всё свободное для ней пространство ;100px - это просто пустой ряд чтобы мои блоки не наежали на нижний контент!!! */
+	grid-template-rows:  auto 500px 1fr 100px;
+	grid-gap:35px;
+}
+
+
+
+
+
+
+/* прописываем для каждой карточки(всего 9-ть) колонку, ряд и свойства */
+
+.first_book{
+	grid-column: 1 / 2;   /* начало колонки(1) и конец колонки(2) */
+	grid-row: 1 / 2;       /* начало в ряду(1) и конец в ряду(2) */
+	max-width: 420px;	
+	background-color: #f8f8f8;
+	background: url("img/photo1.png") center no-repeat;
+	background-size: cover;
+}
+
+.second_book{
+	grid-column: 2 / 3; 
+	grid-row: 1 / 2;
+	max-width: 420px;	
+	background-color: #f8f8f8;
+	background: url("img/photo2.png") center no-repeat;
+	background-size: cover;
+}  
+
+.third_jens{
+	grid-column: 3 / 5;  
+	grid-row: 1 / 2;     
+	max-width: 870px;	
+	background-color: #f8f8f8;
+	background: url("img/janes3.png") center 10% no-repeat;
+	background-size: cover;
+}  
+
+.fourth_book{
+	grid-column: 1 / 2;   
+	grid-row: 2 / 3;
+	max-width: 420px;	
+	background-color: #f8f8f8;
+	background: url("img/photo4.png") center no-repeat;
+} 
+
+.fifth_book{
+	grid-column: 2 / 3;  
+	grid-row: 2 / 3;
+	max-width: 420px;
+	background-color: #f8f8f8;
+	background: url("img/photo5.png") center no-repeat;
+}
+
+.sixth_book {
+	grid-column: 3 / 4;  
+	grid-row:  2 / 3;
+	max-width: 420px;	
+	background-color: #f8f8f8;
+	background: url("img/photo6.png") center no-repeat;
+} 
+
+.seventh_book {
+	grid-column: 4 / 4;  
+	grid-row:  2 / 3;
+	max-width: 420px;
+	background-color: #f8f8f8;
+	background: url("img/photo7.png") no-repeat;
+}
+
+.eight_book {
+	grid-column: 1 / 4;  
+	grid-row: 3 / 4;
+	grid-template-columns: minmax(320px, 1320px);
+	background-color: #efefed;	
+} 
+
+
+
+.inlaneCart{
+	 display: grid;
+    grid-template-columns: 40% auto;    
+    grid-gap: 200px;
+	}
+
+
+.blondText{  
+	grid-column: 1 / 2;   /* начало колонки(1) и конец колонки(2) */
+	grid-row: 1 / 2;       /* начало в ряду(1) и конец в ряду(2) */
+	}
+
+.titleBlond {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    margin-top: 25%;   
+}
+
+
+
+
+
+.ninth_book{
+	grid-column: 4 / 5;  
+	grid-row: 3 / 4;
+	max-width: 420px;
+	background-color: #f8f8f8;
+	background: url("img/photo9.png") no-repeat;
+	    background-size: cover;
+}
+
+
+.first_book:hover,
+.second_book:hover,
+.third_jens:hover,
+.fourth_book:hover,
+.fifth_book:hover,
+.sixth_book:hover, 
+.seventh_book:hover,
+.eight_book:hover, 
+.ninth_book:hover {
+	filter: drop-shadow(0 0 12px rgba(0,0,0,0.14));
+	transition-duration: 300ms;
+}
+
+.jensText{
+	 font-size: 21px;
+    letter-spacing: 1px;
+    color: #9a9a9a;
+    font-weight: 300;
+    font-family: 'montserratlight';
+	text-align: left;	
+	padding: 15px;
+
+}
+
+	.imgBlond{
+		width: 1320px;
+		background: url("img/blond_gierl_8.png") center no-repeat;
+	}
+
+
+
+.mini_text_main {
+    font-size: 13px;
+    line-height: 22px;
+    color: #8e8c8c;
+    font-weight: 400;
+    font-family: "montserratlight";
+    padding: 0px 0 20px 0;
+    text-align: left;
+ }
+
+
+.titleMaxBlond_right{
+	font-size: 180px;
+letter-spacing: 10px;
+line-height: 50px;
+color: #00c8c8;
+font-weight: 700;
+font-family: 'montserratextrabold';
+}
+
+
+
+.titleMiniBlond_right{
+	font-size: 62px;
+letter-spacing: 4px;
+line-height: 54px;
+color: #00c8c8;
+font-weight: 500;
+font-family: 'montserratextrabold';
+white-space: nowrap;
+padding-top: 65px;
+}
+
+
+@media (max-width: 1850px){
+.inlaneCart{	 
+    grid-template-columns: 35% auto;    
+    grid-gap: 200px;
+	}
+}
+
+@media (max-width: 1770px){
+.inlaneCart{	 
+    grid-template-columns: 35% auto;    
+    grid-gap: 100px;
+	}
+}
+
+
+@media (max-width: 1650px){
+   .photo_book_wrap{
+	/* с этой строки начинается объявление grid-блока */
+	display: grid;
+	/* создаём 4-ре колонки и три ряда  */
+	grid-template-columns: repeat(3, 1fr);
+	/* поскольку высота у всех фото одинаково, то для каждого ряда сразу прописываю высоту 500px но у одной auto чтобы внутренний контекст не вылазил вниз*/
+	grid-template-rows: auto 500px 500px 1fr 100px;
+}
+
+
+/* прописываем для каждой карточки(всего 9-ть) колонку, ряд и свойства */
+
+.first_book{
+	grid-column: 1 / 2;   /* начало колонки(1) и конец колонки(2) */
+	grid-row: 1 / 2;       /* начало в ряду(1) и конец в ряду(2) */
+	
+}
+
+.second_book{
+	grid-column: 2 / 3; 
+	grid-row: 2 / 3;
+	
+}  
+
+.third_jens{
+	grid-column: 2 / 4;  
+	grid-row: 1 / 2;     
+	
+}  
+
+.fourth_book{
+	grid-column: 1 / 2;   
+	grid-row: 2 / 3;
+	
+} 
+
+.fifth_book{
+	grid-column: 1 / 2;  
+	grid-row: 3 / 4;
+	
+}
+
+.sixth_book {
+	grid-column: 2 / 3;  
+	grid-row:  3 / 4;
+	
+} 
+
+.seventh_book {
+	grid-column: 3 / 4;  
+	grid-row:  3 / 4;
+	max-width: 420px;
+	background-color: #f8f8f8;
+	background: url("img/photo7.png") no-repeat;
+}
+
+.eight_book {
+	grid-column: 1 / 4;  
+	grid-row: 4 / 5;
+	
+} 
+
+.titleBlond{
+   margin-left: 20%;
+}
+
+.ninth_book{
+	grid-column: 3 / 4;  
+	grid-row: 2 / 3;
+	
+}
+
+}
+
+
+@media (max-width: 1600px){
+.inlaneCart{	 
+    grid-template-columns: 30% auto;    
+    grid-gap: 100px;
+	}
+}
+
+
+@media (max-width: 1450px){
+   .photo_book_wrap{
+	/* с этой строки начинается объявление grid-блока */
+	display: grid;
+	/* создаём 4-ре колонки и три ряда  */
+	grid-template-columns: repeat(2, 1fr);
+	/* поскольку высота у всех фото одинаково, то для каждого ряда сразу прописываю высоту 500px но у одной auto чтобы внутренний контекст не вылазил вниз*/
+	grid-template-rows:  auto  repeat(3, 500px) 1fr 100px;
+}
+
+
+/* прописываем для каждой карточки(всего 9-ть) колонку, ряд и свойства */
+
+.first_book{
+	grid-column: 1 / 2;   /* начало колонки(1) и конец колонки(2) */
+	grid-row: 1 / 2;       /* начало в ряду(1) и конец в ряду(2) */
+	background: url("img/photo1.png") center no-repeat;
+       background-size: cover;
+}
+
+.second_book{
+	grid-column: 2 / 3; 
+	grid-row: 2 / 3;
+	
+}  
+
+.third_jens{
+	grid-column: 2 / 3;  
+	grid-row: 1 / 2;     
+	margin-left: -15%;
+}  
+
+.fourth_book{
+	grid-column: 1 / 2;   
+	grid-row: 3 / 4;
+	
+} 
+
+.fifth_book{
+	grid-column: 2 / 3;  
+	grid-row: 3 / 4;
+	
+}
+
+.sixth_book {
+	grid-column: 1 / 2;  
+	grid-row:  4 / 5;
+	
+} 
+
+.seventh_book {
+	grid-column: 2 / 3;  
+	grid-row:  4 / 5;	
+}
+
+.eight_book {
+	grid-column: 1 / 3;  
+	grid-row: 5 / 6;
+	
+} 
+
+	.imgBlond{
+		width: 1320px;
+		background: url("img/blond_gierl_8.png") center no-repeat;
+	}
+
+.ninth_book{
+	grid-column: 1 / 2;  
+	grid-row: 2 / 3;
+	
+}
+
+}
+
+
+
+@media (max-width: 1450px){
+.inlaneCart{	 
+    grid-template-columns: 30% auto;    
+    grid-gap: 50px;
+	}
+}
+
+
+
+
+@media (max-width: 1350px){
+   .photo_book_wrap{
+	/* с этой строки начинается объявление grid-блока */
+	display: grid;
+	/* создаём 4-ре колонки и три ряда  */
+	grid-template-columns: repeat(1, 500px);
+	/* поскольку высота у всех фото одинаково, то для каждого ряда сразу прописываю высоту 500px но у одной auto чтобы внутренний контекст не вылазил вниз; 1fr - это на всё свободное для него место;100px - это просто пустой ряд чтобы мои блоки не наежали на нижний контент!!! */
+	grid-template-rows: auto repeat(7, 500px) 1fr 100px;
+    place-content: center;
+}
+
+.items_book_wrap{
+	margin: 60px 20px;
+}
+/* прописываем для каждой карточки(всего 9-ть) колонку, ряд и свойства */
+
+.first_book{
+	grid-column: 1 / 2;   /* начало колонки(1) и конец колонки(2) */
+	grid-row: 2 / 3;       /* начало в ряду(1) и конец в ряду(2) */
+	width: 400px;
+	}
+
+.second_book{
+	grid-column: 1 / 2; 
+	grid-row: 3 / 4;
+	width: 400px;
+}  
+
+.third_jens{
+	grid-column: 1 / 2;  
+	grid-row: 1 / 2;     
+	margin-left: 5px;
+}  
+
+.privatW{
+    width: 50%;
+}
+
+.fourth_book{
+	grid-column: 1 / 2;   
+	grid-row: 4 / 5;
+	width: 400px;
+} 
+
+.fifth_book{
+	grid-column: 1 / 2;  
+	grid-row: 5 / 6;
+	width: 400px;
+}
+
+.sixth_book {
+	grid-column: 1 / 2;  
+	grid-row:  6 / 7;
+	width: 400px;
+} 
+
+.seventh_book {
+	grid-column: 1 / 2;  
+	grid-row:  7 / 8;	
+	width: 400px;
+}
+
+.eight_book {
+	grid-column: 1 / 2;  
+	grid-row: 9 / 10;
+	width: 800px;
+	margin-left: -36%;
+} 
+
+.inlaneCart{ 
+    grid-gap: 0px;
+	}
+
+.imgBlond {
+    width: 1320px;
+    background: url("img/blond_gierl_8.png") 30% no-repeat;
+    background-size: contain;
+}
+
+.titleMaxBlond_right {
+    font-size: 80px;
+}
+
+.titleMiniBlond_right {
+    font-size: 32px;   
+}
+
+.titleBlond {
+    margin-left: 5%;
+}
+
+
+.ninth_book{
+	grid-column: 1 / 2;  
+	grid-row: 8 / 9;
+	width: 400px;
+}
+
+}
+
+
+@media (max-width: 1100px){
+.eight_book {
+	margin-left: -25%;
+} 
+
+}
+
+@media (max-width: 940px){
+
+/* меню-ссылки расположила в одну колонку */
+	.refers {
+		display: block;
+	}
+
+	.link_one, li.refer:first-child {
+    margin-left: 30px;
+	}
+
+.privatW{
+    width: 90%;
+}
+
+.third_jens { 
+    background: url("img/janes3.png") 0% no-repeat;
+    background-size: cover;
+}
+
+/* восьмую карточку переопределила свойства */
+
+.inlaneCart {
+    grid-template-columns: 25%;   
+}
+
+.eight_book {
+	grid-column: 1 / 2;  
+	grid-row: 9 / 10;
+	width: 320px;
+	margin-left: 0;
+} 
+
+
+.titleBlond {   
+        display: none;
+}
+
+
+.imgBlond {
+    width: 1320px;
+    background: url("img/blond_gierl_8.png") 10% no-repeat;
+    background-size: contain;
+}
+
+
+
+}
+
+
+
+@media (max-width: 700px){
+
+
+.third_jens { 
+    background: url("img/janes3.png") 0% no-repeat;
+    background-size: cover;
+}
+
+/* восьмую карточку переопределила свойства */
+
+.inlaneCart {
+    grid-template-columns: 55%;
+    grid-gap: 0px;
+}
+
+.imgBlond {
+    width: 581px;
+    background: url("img/blond_gierl_8.png") 10% no-repeat;
+    background-size: contain;
+}
+
+.eight_book {    
+    grid-template-columns: minmax(320px, 581px);
+    background-color: #efefed;
+    margin-left: 0;
+}
+
+.privatW{
+    width: 90%;
+}
+
+}
+
+
+@media (max-width: 700px){
+	.link_one, li.refer:first-child {
+		margin-left: 0px;
+	}
+	li.refer {
+		margin-left: 0;
+	}
+
+}

@@ -1,0 +1,165 @@
+
+
+
+/* объявляет топ_блок флэксом */
+.top_bar {
+	/* объявила этот блок flex */
+	display:flex;
+
+	/* убрать разные точки от тега ul и li */
+	list-style: none;
+	/* прижать к краям  крайние колонки */
+    justify-content: space-between;
+
+
+	/* не переносится на другую строку */
+	flex-wrap: wrap;
+	/* внутренние элементы будут прилеплены к верху блока */
+	align-content: flex-start;
+	/* прописывая  высоту со словами max и min мы делаем наши элементы адаптивными */	
+	max-height: 100px;
+	background-color: #333333;
+	
+}
+
+
+.currence_GBP{
+	margin-top: 10px;
+    margin-right: 700px;
+        margin-left: 20px;
+}
+
+
+.register{
+	margin-top: 10px;
+margin-left: 70px;
+}
+
+.sign_in{
+	margin-top: 10px;
+	margin-left: 50px;
+}
+
+
+
+
+/* стили для текста Currency:GBP */
+.header_btn{
+	font-size: 13px;
+	line-height: 21px;
+	color: #777777;
+	font-weight: 400;
+	font-family: 'montserratsemibold';
+}
+
+/* стили для иконки(Currency - )стрелка */
+.header_btn i{
+	font-size: 13px;
+	line-height: 21px;
+	color: #777777;
+}
+
+
+/* стили для слов_ссылок: регистрация и вход */
+.menu_link{
+	font-size: 13px;
+	line-height: 20px;
+	color: #999999;
+	font-weight: 400;
+	font-family: 'montserratsemibold';
+	text-align: right;
+}
+
+.menu_link:hover{
+	color:#00c8c8;
+}
+
+
+/* стили для блока корзина */
+.corzina_link{
+	width: 147px;
+	height: 46px;
+	background-color: #00c8c8;
+	margin-left: 70px;
+}
+
+/* стили для текста внутри блока корзины */
+.cart{
+	font-size: 13px;
+	line-height: 21px;
+	color: #ffffff;
+	font-weight: 400;
+	font-family: "montserratsemibold";
+}
+
+/* стили для иконки в блоке корзине */
+.corzina_link a i.fa{
+	font-size: 20px;
+	margin: 15px;
+	color: #ffffff;
+}
+
+
+@media (max-width: 1750px){
+	.currence_GBP{
+		margin-right: 500px;
+	}
+}
+
+@media (max-width: 1450px){
+	top_bar {
+		    padding-left: 6%
+	}
+	.currence_GBP{
+		margin-right: 400px;
+	}
+}
+
+
+@media (max-width: 1250px){
+	top_bar {
+		    padding-left: 6%
+	}
+	.currence_GBP{
+		margin-right: 200px;
+	}
+}
+
+
+@media (max-width: 1000px){
+	top_bar {
+		    padding-left: 3%
+	}
+	.currence_GBP{
+		margin-right: 80px;
+	}
+}
+
+
+/* при изменении размера экрана до 750 пикселей изменяем отступы для следующих классов */
+@media (max-width: 850px){
+	.top_bar {
+		    padding-left: 3%;
+		    padding-right: 3%;
+	}
+.currence_GBP{
+		margin-right: 20px;
+	}
+.register,
+.sign_in{
+		margin-left:20px;
+	}
+
+}
+
+@media (max-width: 650px){
+
+.register,
+.sign_in{		
+		margin-left: 15px;
+	}
+	.corzina_link{
+		margin-left: 30px;
+	}
+
+}

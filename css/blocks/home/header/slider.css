@@ -1,0 +1,200 @@
+.slaider{
+
+	/* на заднем фоне будет картинка улыбчивый чел*/
+	background: url("img/photo.png") no-repeat; 
+	/* что бы изображение масштабировалось без нарушения пропоций */
+	/* background-size: cover; */
+	background-color: #f8f8f8;
+	height: 920px;
+	min-height: 600px;
+}
+
+
+/* буквы A V E */
+
+.photo_ave{
+	font-size: 450px;
+	letter-spacing: 23px;
+	color: #575153;
+	font-weight: 700;
+	font-family: 'montserratextrabold';
+	text-align: center;
+	white-space: nowrap;
+	/* выровнила по центру большие буквы a v e */
+	
+}
+
+/* поле поиска и кнопка (внутри поля) */
+#search-form{
+	position: relative;
+	width: 190px;
+	border: 1px solid #e7e7e7;
+	display: inline-flex;
+}
+
+/* делаю у кнопки невидимой рамку и задний фон подгоняю к фону поля поиска */
+#search_btn{
+	border: none;
+	background-color: transparent;
+	padding-right: 5px;
+}
+
+
+
+
+input[name="search"]{
+	width: 100%;
+	height: 30px;
+	border: none;  
+	background-color: transparent;
+	padding-left: 5px;
+	font-size: 13px;
+	line-height: 27px;
+	color: #989898;
+	font-weight: 400;
+	font-family: "montserratlight";
+}
+
+/*  * Убирает внутренний отступ и кнопку очистки строки(крестик) поиска в Safari и Chrome  !!!*/
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+	-webkit-appearance: none;
+}
+
+
+.slider_menu{
+	/* 38-верх    134-вначале_слева */
+	padding: 38px 0 0 134px;
+	display: grid;
+	grid-template-columns: 35% 35% 25%; 
+}
+
+
+
+.btn_men-img {
+	width: 342px;
+	height: 59px;
+	background-color: rgba(115,115,115,0); /* это прозрачный фон !!!! */
+	border: 2px solid #737373;
+	font-size: 16px;
+	letter-spacing: 3px;
+	color: #454647;
+	font-weight: 400;
+	font-family: "montserratlight";
+	text-align: center;
+}
+
+.btn_men-img a span{
+    color: #8c8c8c;
+}
+
+.btn_men-img:hover{		
+	background-color: #00c8c8;	
+	
+}
+
+.btn_men-img a span:hover{
+   color: #f8f8f8;
+}
+
+/* нижняя кнопка */
+.stop {
+	/*прикрепила кнопку к правому нижнему краю с небольшими отступами */
+	margin-block-start: 5%;
+	margin-left: 60%;
+	padding-top: 20px; 
+}
+
+
+@media (max-width: 1750px){
+	.slider_menu{
+		/* отступы 38-верх    100-вначале_слева */
+		padding: 38px 0 0 100px;
+		display: grid;
+		grid-template-columns: 450px repeat(2,1fr);
+	}
+	.photo_ave{
+		font-size: 350px;
+	}
+
+}
+
+@media (max-width: 1320px){
+	.slider_menu{
+		padding: 38px 0 0 60px;
+		display: grid;
+		grid-template-columns: auto;
+		grid-template-rows:repeat(2,1fr);
+	}
+	.photo_ave{
+		font-size: 250px;
+	}
+	.stop {
+		/*прикрепила кнопку к правому нижнему краю с небольшими отступами */
+		margin-block-start: 3%;
+		margin-left: 40%;
+	}
+}
+
+/*чтобы при уменьшении блока до 750 и меньше "улыбающийся человек" передвигался в центр!!! Иначе его не видно */
+@media (max-width: 750px) {
+	.slaider{
+		max-width: none;
+		background: url("img/photo.png") center no-repeat; 
+	}
+	.slider_menu{
+		padding: 50px 0 0 20px;
+	}
+
+	.photo_ave{
+		font-size: 200px;
+	}
+	.stop {
+		/*прикрепила кнопку к правому нижнему краю с небольшими отступами */
+		margin-block-start: 2%;
+		margin-left: 20%;
+	}
+}
+
+/* всё что уже 620 пикселей будет иметь следующие свойства */
+@media (max-width: 620px){
+
+	.slider_menu{
+		padding: 60px 0 0 20px;
+		display: grid;
+		grid-template-columns: auto;
+		grid-template-rows: repeat(2,1fr);
+	}
+	.photo_ave{
+		/* сделала блок не видимым */
+		opacity: 0;
+		/* сделала так чтобы блок при наезде на другие блоки не мешал их работе */
+	}
+	button.btn_men-img {
+		    width: 302px;
+	}
+	.stop {   
+		margin-left: 5%;
+	}
+}
+
+/* выше 610 пикселей внешний-верхний отступ 120 пикселей */
+@media (min-height: 610px) {
+	.photo_ave{
+		margin-top: 120px;
+	}
+}
+
+/* всё что ниже 610 пискселей будет невидимо */
+@media (max-height: 610px) {
+	.photo_ave{
+		/* сделал блок не видимым */
+		opacity: 0;
+		/* сделала так чтобы блок при наезде на другие блоки не мешал их работе */
+
+	}
+
+}
+
+
+

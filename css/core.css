@@ -1,0 +1,49 @@
+
+/* убрать обводку(по-умолчанию) при клике на любой input !!!*/
+:active, :hover, :focus {
+    outline: 0;
+    outline-offset: 0;
+}
+
+
+* {
+	margin: 0;
+	padding: 0;
+  -webkit-box-sizing:border-box;
+  -moz-box-sizing:border-box;
+  box-sizing:border-box;
+}
+
+body{
+
+	/* задала семейство шрифтов для всей страницы */
+	font-family: montserratextrabold, montserratlight, montserratsemibold, Arial;
+	font-size: 16px;
+	color: #000;
+
+
+	/* позволяет переносить слова на новую строку */
+	overflow-wrap: break-word;
+}
+
+
+/* размеры для всей страницы в целом!  высоту лучше не указывать*/
+#container{
+	max-width: 100%;   /* 2053px */
+	min-width: 320px;
+	margin: 0px auto;
+}
+
+
+
+#header_block{
+   /* max-width: 99.85%; /*2050px*/ */
+}
+
+
+
+a { 
+	text-decoration: none; /* Отменяем подчеркивание у ссылки */
+} 
+
+

@@ -1,0 +1,195 @@
+.table_menu2{
+	display: table;
+}
+
+
+
+
+.men_link,
+.book_link,
+.stores_link,
+.brand_link,
+.womens_link{
+	font-size: 13px;
+	line-height: 20px;
+	color: #000;
+	font-weight: 400;
+	font-family: 'montserratsemibold';
+	padding-right: 20px;
+	
+	/* заПретить перенос слов на другую строку */
+	white-space: nowrap;
+
+	/* задаём плавность при перемене цвета */
+	transition-property: background-color;
+	/* transithion-property: color; */
+	transition-duration: 400ms;
+}
+
+
+.men_icons,
+.women_icons,
+.stores_icons,
+.book_icons{
+	font-size: 13px;	
+	letter-spacing: 1px;
+	color: #9a9a9a;
+	font-weight: 400;
+	font-family: 'montserratlight';
+}
+
+.men_icons:hover,
+.women_icons:hover,
+.stores_icons:hover,
+.book_icons:hover{
+	color: #00c8c8;
+}
+
+
+.book_link:hover,
+.stores_link:hover,
+.brand_link:hover,
+.womens_link:hover,
+.men_link:hover {
+	color: #00c8c8;
+}
+
+
+
+
+/* модальное окно  это начало нового css*/
+/* стили модального окна */
+.modal-container {
+	/* фиксированное позиционирование, окно стабильно при прокрутке */
+	position: absolute;
+	background-color: #f8f8f8;
+	filter: drop-shadow(0px 17px 12px rgba(0,0,0,0.14));
+	width: 467px;
+	height: 527px;
+	left: 54%;
+	padding: 50px;
+	border-radius: 5px;
+	-webkit-overflow-scrolling: touch;
+	/* webkit эта приставка означает поддержку броузера Chrome Safari Opera Firefox Android iOS*/
+	-webkit-transform: translate(-50%, -200%);
+	/* ms эта приставка означает поддержку броузера IE(интернет Эксплрорер)*/
+	-ms-transform: translate(-50%, -200%);
+
+	/* это общая для всех.Строка означает передвижение данного блока  вправо и вниз(отрицательныее числа наоборот-влево и вверх)*/
+	transform: translate(-50%, -200%);
+
+
+	/* Step 3 */
+	-webkit-transition: -webkit-transform 200ms ease-out;
+	transition: transform 200ms ease-out;
+}
+
+.modal:before {
+	content: "";
+	position: fixed;
+	visibility: hidden;
+	top: 0;
+	left: 0;
+}
+
+/* Step 2 */
+
+/* активируем слой затемнения */
+.modal:target:before {
+	visibility: visible;
+}
+
+
+/* активируем модальный блок */
+.modal:target .modal-container {
+	top: 15%;    
+	/* замедляю появление модального окна. Окно медленно выплывает сверху */
+	transition: all 0.8s ease;
+	
+	-webkit-transform: translate(-50%, 0);
+	-ms-transform: translate(-50%, 0);
+	transform: translate(-50%, 0);
+}
+
+/* конец модального окна */
+
+.casual_wrap{
+	display: flex;
+	gap: 80px;
+}
+
+
+.title_refer{
+	font-size: 12px;
+	line-height: 20px;
+	color: #333333;
+	font-weight: 800;
+	font-family: 'montserratextrabold';
+}
+
+
+
+.block_sale{
+	width: 350px;
+	height: 150px;
+	background-color: #333333;
+	
+	font-size: 36px;
+	letter-spacing: 2px;
+	line-height: 48px;
+	color: #ffffff;
+	font-weight: 700;
+	font-family: 'montserratlight';
+	text-align: center;
+	
+}
+
+
+
+.shiroco{
+	font-weight: 700;
+	font-family:'montserratextrabold';
+	margin-top: 50px;
+}
+
+.tonko{
+	font-weight: 400;
+	font-family:'montserratlight';
+	color: #ffffff;
+}
+
+
+
+/* конец нового css */
+
+
+
+
+
+/* вызываю @media и сообщаю чтобы при величине экрана ниже 620 возобновить перенос строк */
+
+@media (max-width: 1300px){	
+
+	.modal:target .modal-container {
+		top: 20%;    	
+	}
+
+}
+
+@media (max-width: 1100px){	
+
+	.modal:target .modal-container {
+		top: 30%;    	
+	}
+
+}
+@media (max-width: 620px){
+	.book_link,
+	.stores_link,
+	.brand_link{
+		white-space: normal;
+	}
+	.modal:target .modal-container {
+		top: 35%;    	
+	}
+}
