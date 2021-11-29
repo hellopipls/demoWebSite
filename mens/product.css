@@ -1,0 +1,573 @@
+.main_product{
+       margin: 60px 15% 120px 15%;
+}
+
+
+/* сетка */
+.contentProduct_wrap{
+	display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    width: 1170px;    
+}
+
+.img_wrap{
+	grid-column: 1 / 2;   /* начало колонки(1) и конец колонки(2) */
+	grid-row: 1 / 2;       /* начало в ряду(1) и конец в ряду(2) */	
+	width: 570px;
+    height: 710px;
+    background-color: #f8f8f8;
+}
+
+
+.datails_wrap{
+    grid-column: 2 / 3;   /* начало колонки(2) и конец колонки(3) */
+    grid-row: 1 / 2;       /* начало в ряду(1) и конец в ряду(2) */
+    max-width: 570px;	
+    background-color: #f8f8f8;
+
+}
+
+.data_wrap{
+    grid-column: 1 / 3;   /* начало колонки(1) и конец перед колонкой(2) */
+    grid-row: 2 / 3;       /* начало в ряду(2) и конец перед рядом(3) */
+    background-color: #f8f8f8;
+    height: 900px;
+    
+}
+/* конец сетки */
+
+
+/* slider */
+
+/* всем картинкам(в рамке)  задали позицию  position: absolute; чтобы они располагались СТОПКОЙ друг на друга, а не выстраивались ленточкой*/
+#second_img{
+ position: absolute;  
+ background: url("img/default.png" ) center no-repeat;
+ }
+
+
+#first_img{
+ position: absolute;
+ background: url("img/zoom_photo.png" ) center no-repeat;
+ background-size: 100% 100%;  
+}
+
+#first_img:hover{    
+    animation: anm2 0.7s ease-in-out forwards;
+}
+@keyframes anm2 {
+    to {
+        background-size: 200% 200%;
+    }
+}
+
+/* правую кнопку сдвинуля ближе к левой стороне */
+#rightZnachok{
+    transform: translate3d(513px, 300px, 0px);
+}
+
+#leftZnachok{
+    transform: translate3d(0px, 300px, 0px);
+}
+
+.img_wrap button {
+   border: none;
+   background-color: transparent;
+}
+
+ #leftZnachok::before {
+   content: "\f104";  
+   font-family: "Font Awesome 5 Free";  
+   font-weight: 900;
+   font-size: 48px; 
+   color: #ffffff;
+  
+}
+
+ #rightZnachok::before{
+  content: "\f105";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  font-size: 48px; 
+  color: #ffffff;
+  
+}
+
+#leftZnachok:hover,
+#rightZnachok:hover{
+     background-color: #00c8c8; 
+}
+/*конец  кнопок */
+
+
+
+
+
+/*  */
+#add_hover_review:hover{
+    color: #00c8c8; 
+    font-weight:  bold;
+}
+
+.colInfo{
+   padding-left: 20px;
+}
+
+
+
+.title_product{
+    font-size: 18px;
+    line-height: 20px;
+    color: #575153;
+    font-weight:  bold;
+    font-family: 'montserratlight';
+}
+
+
+.privatPropertyProduct{
+    font-size: 16px;
+    color: #ded3aa;
+}
+
+
+/* свойства для tab */
+
+.tabs {
+  max-width: 1170px;
+  height: 50px;
+  background-color: #e6e7e8;
+}
+
+.tabs>input[type="radio"] {
+  display: none;
+}
+
+.tabs>input[type="radio"]+label {    
+   width: 200px;
+   height: 50px;
+   text-align: center;
+   line-height: 30px;
+   background-color: #e6e7e8;
+}
+
+.tabs>input[type="radio"]:checked+label {
+  background-color: #333333;
+  color: #fff;
+}
+
+.tabs>div {
+  /* скрыть контент по умолчанию */
+  display: none;
+
+}
+
+/* отобразить контент, связанный с выбранной радиокнопкой (input type="radio") */
+/* при нажатии(checked) на элемент с(id="tab-btn-1") применить свойства приписанные в{...} к элементу с(id="content-1)*/
+#tab-btn-1:checked~#content-1,
+#tab-btn-2:checked~#content-2,
+#tab-btn-3:checked~#content-3,
+#tab-btn-4:checked~#content-4,
+#tab-btn-5:checked~#content-5 {
+  display: block;
+}
+
+
+.tabs>label {
+  display: inline-block;
+}
+
+.tabs>label:first-of-type {
+  margin-left: 0;
+}
+
+
+/* свойства для текста в контестной части tab */
+.tab_miniContent{
+    font-size: 15px;
+    line-height: 22px;
+    color: #8c8c8c;
+    font-weight: 400;
+    font-family: "montserratlight";
+    padding: 20px;
+}
+
+
+
+ul#fromInput li{
+    list-style-image: url("img/44.png");
+    margin-left: 50px;
+}
+/* конец свойства для tab (второй ряд) */
+
+
+
+
+
+/* свойства для звёздочек */
+
+.rating-widget{
+ display: flex;
+ list-style: none;
+ flex-wrap: wrap;  
+ justify-content: end;
+}
+
+#propProduct{
+ display: flex;
+ list-style: none;
+ flex-wrap: wrap;     
+}
+
+
+.paddingLi{ 
+   padding-right: 5px;
+   padding-left: 13px;
+}
+
+.success-box > div { 
+  color:#888;
+}
+
+/* стили относятся ко всему классу text-message */
+.text-message{
+   padding-left: 10px;
+}
+
+/*прописанные тут стили будут относятся ТОЛЬКО к тексту(content:"") который вставляется в конце класса, т.е. к слову Review(s)*/
+.text-message:after{
+ content: " Review(s)";
+ padding-right: 5px;
+}
+
+/* Rating Star Widgets Style */
+
+.rating-stars #stars {
+  list-style-type:none;
+  padding:0;
+  
+  -moz-user-select:none;
+  -webkit-user-select:none;
+}
+.rating-stars #stars > span.star {
+  display:inline-block;
+  
+}
+
+/* Idle State of the stars */
+.rating-stars #stars > span.star > i.fa {
+  font-size:0.8em; /* Change the size of the stars */
+  color:#ccc; /* Color on idle state */
+}
+
+/* Hover state of the stars */
+.rating-stars #stars > span.star.hover > i.fa {
+  color:burlywood;
+}
+
+/* Selected state of the stars */
+.rating-stars #stars > span.star.selected > i.fa {
+  color:#ddcd90;
+}
+
+/* конец звёздочек */
+
+/* кнопка collor */
+
+table.table_product {
+  border-collapse: separate;
+  border-spacing: 15px 0;
+}
+
+
+
+#size,
+#color-select {
+    width: 170px;
+    height: 35px;
+    background-color: rgba(45,113,240,0);
+    border: 1px solid #e7e7e7;
+    font-size: 13px;
+    line-height: 22px;
+    color: #989898;
+    font-weight: 300;
+    font-family: 'montserratlight';
+    padding-left: 15px;
+}
+
+
+
+
+#qty{
+    display: flex;
+    width: 35px;
+    height: 35px;
+    background-color: rgba(45,113,240,0);
+    border: 1px solid #e7e7e7;
+    font-size: 13px;
+    line-height: 22px;
+    color: #989898;
+    font-weight: 300;
+    font-family: 'montserratlight';
+    justify-content: flex-end;
+}
+
+tr.fulText{
+    font-size: 13px;
+    line-height: 30px;
+    color: #575153;
+    font-weight: 400;
+    font-family: 'montserratlight';
+}
+
+#countI1,
+#countI2{
+ border: none;
+ /* !important означает что мои стили в приоритете перед броузерными для заднего фона кнопок */
+background-color:#f8f8f8 !important ;
+padding-left: 12px;
+}
+
+
+.lineCount{
+    width: 1px;
+    height: 33px;
+    background-color: #e7e7e7;
+    margin-left: 15px;
+}
+
+.lineCount2{
+    width: 33px;
+    height: 1px;
+    background-color: #e7e7e7;
+    margin-top: -9px;
+}
+
+
+/* btn corzina */
+#buttons_productCorzina{
+    display: flex;
+    margin-bottom: 10px;
+}
+
+
+
+#btnAddCorzina{
+    width: 241px;
+    height: 59px;
+    background-color: #00c8c8;
+        margin-right: 20px;
+        padding: 20px;
+        border: none;
+}
+
+#btnAddCorzina:hover{
+   background-color: #333333;
+}
+
+#btnAddLookbook{
+ width: 303px;
+ height: 59px;
+ background-color: rgba(115,115,115,0);
+ border: 2px solid #737373;
+  padding: 20px;
+}
+
+#btnAddLookbook:hover{     
+background-color: #00c8c8;
+}
+
+.itemsText{
+ font-size: 16px;
+ letter-spacing: 3px;
+ color: #454647;
+ font-weight: 400;
+ font-family:'montserratlight'; 
+}
+
+.itemsText1{
+     font-size: 16px;
+    letter-spacing: 3px;   
+     color: #ffffff;
+    font-weight: 400;
+    font-family: 'montserratlight';
+}
+
+
+#btnAddToCompare{
+    display: flex;
+    width: 241px;
+    height: 59px;
+    font-size: 14px;
+    letter-spacing: 3px;
+    color: #454647;
+    font-weight: 400;
+    font-family: 'montserratlight';
+    padding-top: 10px;
+    border: none;
+    background-color:#f8f8f8 !important ;
+}
+
+
+
+/* размеры круга */
+.cicl{
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    background-color: #727272;
+    margin-right: 10px;
+}
+
+/* свойства иконки */
+.cicl::after{  
+    display: block;
+    content: "\f422";
+    font-family: 'Font Awesome 5 Free', 'Font Awesome 5 Brands';
+    font-weight: 900;
+    width: 50px;
+    height: 50px;
+    color: #ffffff;
+    margin-top: 8px;
+    margin-left: -8px;
+}
+
+/* меняем цвет круга при наведении мышки */
+.cicl:hover{
+    background-color:  #00c8c8;
+}
+
+/* отзывы */
+#trackInput{
+    width: 90%;
+    height: 30px;
+     border-radius: 5px;
+    border: none;
+    background-color: #ccc;
+    padding-left: 5px;
+    font-size: 13px;
+    line-height: 27px;
+    color: #989898;
+    font-weight: 400;
+    font-family: "montserratlight";
+}
+
+#addTrack2{
+    width: 35px;
+    height: 30px;
+    border-radius: 15px;
+    border: none;
+    background-color: #ccc;
+    color: #8e8c8c;
+}
+
+
+
+@media (max-width: 1600px){
+    .main_product{
+     margin: 60px 10% 120px 10%;
+ }
+}
+
+@media (max-width: 1420px){
+    .main_product{
+     margin: 60px 3% 120px 3%;
+ }  
+}
+
+
+@media (max-width: 1300px){
+
+    /* пеерстраиваем сетку */
+.contentProduct_wrap{
+    display: grid;
+    grid-template-columns:  1fr;
+    gap: 30px;
+    max-width:600px;
+   }
+
+    .datails_wrap{
+        grid-column: 1 / 2;   /* начало колонки(2) и конец колонки(3) */
+        grid-row: 2 / 3;       /* начало в ряду(1) и конец в ряду(2) */
+        max-width: 570px;
+    }
+
+    .data_wrap{
+        grid-column: 1 / 2;   /* начало колонки(1) и конец перед колонкой(2) */
+        grid-row: 3 / 4;       /* начало в ряду(2) и конец перед рядом(3) */       
+        max-width: 570px;
+    }   
+  .main_product{
+     margin: 60px 25% 120px 25%;
+ }
+
+  .tabs>label {
+    display: initial;
+    padding: 7px 10px 27px 5px;
+    }
+    div input[type="radio"]+label:nth-child(4n+2){
+    background-color:#dee0e1;
+    }
+}
+
+
+
+@media (max-width: 1000px){
+    .main_product{
+        margin: 60px 15% 120px 20%;
+    }
+}
+
+@media (max-width: 900px){
+    .main_product{
+        margin: 60px 5% 120px 10%;
+    }
+}
+
+@media (max-width: 800px){
+   .tabs>label {
+    display: initial;
+    padding: 7px 10px 27px 2px;
+    }
+}
+
+@media (max-width: 700px){
+    .main_product{
+        margin: 60px 3% 120px 3%;
+    }
+}
+
+@media (max-width: 650px){
+    tabs>label {
+        display: initial;
+        padding: 7px 0px 27px 1px;
+    }
+
+    .mini_refer {
+        font-size: 11.5px;
+    }
+    .img_wrap{   
+        max-width: 460px;   
+    }
+    .datails_wrap{       
+        max-width: 460px;
+    }
+
+    .data_wrap{      
+        max-width: 460px;
+    } 
+
+    .rating-widget {   
+    justify-content: flex-start;
+    }
+    
+    #btnAddLookbook,
+    #btnAddCorzina {    
+        padding: inherit;
+   }
+
+   #rightZnachok {
+    transform: translate3d(406px, 300px, 0px);
+   }
+
+}
